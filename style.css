@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+}
+
+div.menu {
+  z-index: 1000;
+  background-color: blue;
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 50%;
+  top: 1rem;
+  left: 1rem;
+  position: fixed;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburguer{
+  transition: all 0.5s ease-in-out;
+  background-color: #000;
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 2px;
+  top: 29px;
+  left: 15px;
+}
+
+span:after,
+span:before {
+  transition: all 0.5s ease-in-out;
+  content: '';
+  background-color: #000;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+span::before {
+  top: -10px;
+}
+
+span::after {
+  bottom: -10px;
+}
+
+input:checked ~ label .hamburguer{
+  transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer::after{
+  bottom: 0px;
+  transform: rotate(90deg);
+}
+
+input:checked ~ label .hamburguer::before{
+  top: 0px;
+  transform: rotate(90deg);
+}
+
+input:checked ~ label ~ ul{
+  left: 0%;
+}
+
+ul{
+  z-index: 999;
+  transition: all 0.5s ease-in-out;
+  left: -100%;
+  background-color: #000;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  list-style: none;
+}
+
+
