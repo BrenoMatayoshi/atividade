@@ -122,6 +122,7 @@ section#secao1 > div{
 }
 
 section#secao1 {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
