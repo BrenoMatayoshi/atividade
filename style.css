@@ -4,10 +4,12 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 html{
   scroll-behavior: smooth;
+
 }
 
 a{
@@ -16,7 +18,7 @@ a{
 }
 
 div.menu {
-  background-color: blue;
+  background-color: #F5F5DC;
   height: 3.75rem;
   width: 3.75rem;
   border-radius: 50%;
@@ -25,11 +27,11 @@ div.menu {
   position: fixed;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0, 0.6, 0.40, 1) ;
-  box-shadow: 0px 0px 0px 0vw blue, 0px 0px 0px 0vh blue;
+  box-shadow: 0px 0px 0px 0vw #F5F5DC, 0px 0px 0px 0vh #F5F5DC;
   z-index: 1000;
 }
 
-.links{
+ul {
   display: none;
   list-style: none;
   position: fixed;
@@ -82,39 +84,54 @@ input:checked ~ label .hamburguer::before{
 }
 
 input:checked ~ label .menu{
-  box-shadow: 0px 0px 0px 100vw blue, 0px 0px 0px 100vh blue;
+  box-shadow: 0px 0px 0px 100vw #F5F5DC, 0px 0px 0px 100vh #F5F5DC;
 }
 
 input:checked ~ label ~ ul{
   display: block;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-/*
-input:checked ~ label ~ ul{
-  left: 0%;
+ul li{
+  margin: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
-ul{
-  z-index: 999;
-  transition: all 0.5s ease-in-out;
-  left: -100%;
-  background-color: #000;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  list-style: none;
-} 
-  */
+section{
+  margin: 0rem 1rem;
+  padding: 1rem 0rem;
+}
+
+section p:first-of-type {
+  border-top: #0000004f 1px solid;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
 
 section#secao1 > h1{
-  font: 700 2rem 'Roboto', sans-serif;
-  padding: 5rem 0px 0px;
+  font-size: 2rem;
+}
+
+section#secao1 > div{
+  padding-top: 0.5rem;
+  border-top: #0000004f 1px solid;
+}
+
+section#secao1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section#secao1 > div {
+  margin-top: .5rem;
+}
+
+section#secao1 > div > a {
+  margin: 0.2rem 0.5rem;
 }
