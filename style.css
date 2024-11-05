@@ -12,22 +12,32 @@ html{
 
 a{
   text-decoration: none;
+  color: #000;
 }
 
 div.menu {
-  z-index: 1000;
   background-color: blue;
   height: 3.75rem;
   width: 3.75rem;
   border-radius: 50%;
-  top: 1rem;
-  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
   position: fixed;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s cubic-bezier(0, 0.6, 0.40, 1) ;
+  box-shadow: 0px 0px 0px 0vw blue, 0px 0px 0px 0vh blue;
+  z-index: 1000;
+}
+
+.links{
+  display: none;
+  list-style: none;
+  position: fixed;
+  z-index: 1000;
 }
 
 .hamburguer{
+  z-index: 1000;
   transition: all 0.5s ease-in-out;
   background-color: #000;
   position: relative;
@@ -71,6 +81,19 @@ input:checked ~ label .hamburguer::before{
   transform: rotate(90deg);
 }
 
+input:checked ~ label .menu{
+  box-shadow: 0px 0px 0px 100vw blue, 0px 0px 0px 100vh blue;
+}
+
+input:checked ~ label ~ ul{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*
 input:checked ~ label ~ ul{
   left: 0%;
 }
@@ -88,6 +111,10 @@ ul{
   width: 100vw;
   height: 100vh;
   list-style: none;
+} 
+  */
+
+section#secao1 > h1{
+  font: 700 2rem 'Roboto', sans-serif;
+  padding: 5rem 0px 0px;
 }
-
-
